@@ -1,6 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utility';
 
+
 const initialState = {
     token: null,
     userId: null,
@@ -18,8 +19,7 @@ const authSuccess = (state, action) => {
         token: action.idToken,
         userId: action.userId,
         error: null,
-        loading: false,
-        authRedirectPath: '/'
+        loading: false
     });
 };
 
@@ -49,5 +49,6 @@ const reducer = (state = initialState, action) => {
             return state;
     }
 };
+
 
 export default reducer;
