@@ -37,7 +37,14 @@ class App extends Component {
           in={this.state.showBlock}
           timeout={1000}
           mountOnEnter
-          unmountOnExit>
+          unmountOnExit
+          onEnter={()=>console.log('onEnter')}
+          onEntering={()=>console.log('onEntering')}
+          onEntered={()=>console.log('onEntered')}
+          onExit={()=>console.log('onExit')}
+          onExiting={()=>console.log('onExiting')}
+          onExited={()=>console.log('onExited')}
+          >
           {state => (
             <div style={{
               backgroundColor: 'red',
@@ -50,6 +57,7 @@ class App extends Component {
           )}
 
         </Transition>
+        
         <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
 
         {this.state.modalIsOpen ? <Backdrop show /> : null}
